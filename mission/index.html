@@ -8,16 +8,17 @@
     <meta name="description" content="Nothing at all for now.">
     <meta name="author" content="Clark C.">
     <link href='style.css' rel="stylesheet">
+    <script src="missionJS.js" defer></script>
 </head>
 
-<body>
+<body class="background">
+    <button id="colorMode" onclick="changeColorMode()">Light</button>
     <header>
-        <!-- <p1>Clark: WDD 131 Porfolio</p1> -->
-        <p id="title">MISSION STATEMENT</p>
-        <p id="school">BRIGHAM YOUNG UNIVERISTY-IDAHO</p>
-        <p id="divider"></p>
+        <p id="title" class="mainText">MISSION STATEMENT</p>
+        <p id="school" class="schoolText">BRIGHAM YOUNG UNIVERISTY-IDAHO</p>
+        <p id="divider" class="divider"></p>
     </header>
-    <main>
+    <main class="mainText">
 
         <p>
             Brigham Young University-Idaho was founded and is supported and guided by The Church of Jesus Christ of
@@ -38,7 +39,8 @@
 
     </main>
     <footer>
-        <img src="https://wddbyui.github.io/wdd131/images/byui-logo-blue.webp" alt="BYUI logo" class="center-block">
+        <img src="https://wddbyui.github.io/wdd131/images/byui-logo-blue.webp" alt="BYUI logo" class="center-block"
+            id="byuiLogo">
 
     </footer>
 

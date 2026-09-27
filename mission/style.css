@@ -3,6 +3,7 @@ body {
     margin: 0 auto;
     font-size: 20px;
     line-height: 1.4;
+    color: rgb(10, 10, 10);
 }
 
 header {
@@ -15,7 +16,7 @@ header {
 }
 
 #school {
-    color: blueviolet;
+    color: rgb(138, 43, 226);
     font-size: 16px;
     margin-bottom: -15px;
     letter-spacing: 0.2em;
@@ -23,12 +24,11 @@ header {
 
 #divider {
     padding: 1px 1px;
-    background-color: lightgray;
+    background-color: rgb(211, 211, 211);
 }
 
 main li {
     padding: 10px 10px;
-    /* width: 100%; */
 
 }
 
