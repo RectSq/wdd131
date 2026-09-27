@@ -1,0 +1,42 @@
+body {
+    width: 600px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+#title {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#school {
+    color: blueviolet;
+    /* font-size: 16px; */
+    margin-bottom: -10px;
+}
+
+#divider {
+    padding: 1px 1px;
+    background-color: lightgray;
+}
+
+main li {
+    padding: 10px 10px;
+    /* width: 100%; */
+
+}
+
+.center-block {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: 100%;
+    width: 25%;
+
+    /* Prevents the image from overflowing smaller screens */
+    height: auto;
+}
