@@ -23,7 +23,6 @@ function openModal(e) {
 // Close modal on button click
 closeButton.addEventListener('click', () => {
     modal.close();
-
 });
 
 // Close modal if clicking outside the image
