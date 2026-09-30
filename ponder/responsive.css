@@ -33,7 +33,10 @@ section {
 nav a {
     padding: 20px;
     color: black;
-    display: none;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-top: 2px solid #b1b1b1;
 }
 
 nav a:hover {
@@ -54,12 +57,28 @@ nav a:hover {
     height: 4px;
     background-color: black;
     margin: 5px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 8.5px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -8.5px) rotate(45deg);
+}
+
+.hide {
+    display: none;
 }
 
 footer {
     text-align: center;
 }
-
 
 @media screen and (min-width: 700px) {
     main {
@@ -73,14 +92,17 @@ footer {
 
     nav a {
         display: inline;
+        border: none;
     }
 
     nav {
         text-align: right;
     }
+
 }
 
 @media screen and (min-width: 1000px) {
+
     main {
 
         grid-template-columns: 1fr 1fr 1fr;
