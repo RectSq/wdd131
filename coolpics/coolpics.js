@@ -10,9 +10,9 @@ function openModal(e) {
     const clickedImg = e.target;
     const src = clickedImg.getAttribute('src');
     const alt = clickedImg.getAttribute('alt');
-    // const full = src.replace('sm', 'full');
+    const full = src.replace('sm', 'full');
 
-    modalImage.src = src;
+    modalImage.src = full;
     modalImage.alt = alt;
 
     modal.showModal();
