@@ -61,6 +61,7 @@ footer {
     grid-column: 1/3;
 }
 
+
 @media (min-width: 600px) {
     .main-nav {
         display: grid;
@@ -75,6 +76,7 @@ footer {
         justify-content: center;
 
     }
+
 
     .movie img {
         /* display: grid; */
