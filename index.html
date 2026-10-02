@@ -4,18 +4,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta name="description" content="Nothing at all for now.">
-    <meta name="author" content="Clark C.">
-    <link rel="style" href='style.css'>
+    <title>Folder Link Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: white;
+            margin-bottom: 8px;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <p1>Clark: WDD 131 Porfolio</p1>
-    </header>
-    <main></main>
-    <footer></footer>
+
+    <h1>My Page Links</h1>
+
+    <div class="input-container">
+        <input type="text" id="linkInput" placeholder="Enter file name (e.g., contact.html)">
+        <button onclick="addLinkFromInput()">Add Link</button>
+    </div>
+    <div id="errorMessage" class="error"></div>
+
+    <ul id="linkList">
+        <!-- Links will be loaded dynamically from the array -->
+    </ul>
+
+    <script>
+        // 1. Define your array of HTML files in the folder
+        const pages = [
+            'ponder/dom-theme.html'
+        ];
+
+        const linkList = document.getElementById('linkList');
+
+        // 2. Helper function to create and render a single link item
+        function renderLink(filename) {
+            // Ensure .html extension
+            if (!filename.toLowerCase().endsWith('.html')) {
+                filename += '.html';
+            }
+
+            const listItem = document.createElement('li');
+            const anchor = document.createElement('a');
+
+            anchor.href = filename;
+            anchor.textContent = filename;
+            anchor.target = '_blank';
+
+            listItem.appendChild(anchor);
+            linkList.appendChild(listItem);
+        }
+
+        // 3. Render all existing files from the array on page load
+        function loadInitialPages() {
+            pages.forEach(file => {
+                renderLink(file);
+            });
+        }
+
+        // 4. Allow adding new links dynamically and saving to the array
+        function addLinkFromInput() {
+            const input = document.getElementById('linkInput');
+            const errorDiv = document.getElementById('errorMessage');
+            let filename = input.value.trim();
+
+            errorDiv.innerText = '';
+
+            if (!filename) {
+                errorDiv.innerText = 'Please enter a filename.';
+                return;
+            }
+
+            if (!filename.toLowerCase().endsWith('.html')) {
+                filename += '.html';
+            }
+
+            // Add to JS array and render to DOM
+            pages.push(filename);
+            renderLink(filename);
+
+            input.value = '';
+        }
+
+        // Initialize list on load
+        loadInitialPages();
+    </script>
 
 </body>
 
